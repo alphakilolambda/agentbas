@@ -6,13 +6,29 @@ import { X, Plus, Search, Star, TrendingUp, Download } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FormattedAgent } from '@/lib/virtualsApi'
+import { agents as staticAgents, Agent } from '@/data/agents'
+
+// Static verileri FormattedAgent formatına çevir
+const getStaticAgents = (): FormattedAgent[] => {
+  return staticAgents.map((agent: Agent): FormattedAgent => ({
+    id: agent.id,
+    name: agent.name,
+    category: agent.category,
+    description: agent.description,
+    rating: agent.rating,
+    price: agent.price,
+    functions: agent.functions,
+    url: agent.url,
+    image: agent.image,
+  }))
+}
 
 export default function Comparison() {
   const [selectedAgents, setSelectedAgents] = useState<FormattedAgent[]>([])
-  const [availableAgents, setAvailableAgents] = useState<FormattedAgent[]>([])
+  const [availableAgents, setAvailableAgents] = useState<FormattedAgent[]>(getStaticAgents())
   const [searchQuery, setSearchQuery] = useState('')
   const [showAddAgent, setShowAddAgent] = useState(false)
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     async function fetchAgents() {
@@ -26,11 +42,18 @@ export default function Comparison() {
         }
       } catch (error) {
         console.error('Error fetching agents:', error)
+        // Hata durumunda static veriler kalır
       } finally {
         setLoading(false)
       }
     }
-    fetchAgents()
+    
+    // Arka planda güncelle
+    const timer = setTimeout(() => {
+      fetchAgents()
+    }, 500)
+    
+    return () => clearTimeout(timer)
   }, [])
 
   const addAgent = (agent: FormattedAgent) => {

@@ -28,9 +28,9 @@ const nextConfig = {
       },
     ],
   },
-  // GitHub Pages için base path (repo adına göre ayarlanabilir)
-  // basePath: process.env.NODE_ENV === 'production' ? '/agentbase' : '',
-  // assetPrefix: process.env.NODE_ENV === 'production' ? '/agentbase' : '',
+  // GitHub Pages için base path (repo adına göre)
+  basePath: process.env.NODE_ENV === 'production' ? '/agentbas' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/agentbas' : '',
 }
 
 module.exports = nextConfig
