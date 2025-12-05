@@ -50,14 +50,6 @@ export default function Navigation() {
             </Link>
           </div>
 
-          <div className="flex items-center space-x-4">
-            <button className="px-4 py-2 text-gray-700 hover:text-gray-900 transition-colors">
-              Sign In
-            </button>
-            <button className="px-6 py-2 bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-colors">
-              Get Started
-            </button>
-          </div>
         </div>
       </div>
     </nav>
