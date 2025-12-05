@@ -4,6 +4,11 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'AgentBase - AI Agent Discovery & Comparison Platform',
   description: 'Discover, compare, and select AI agents from the Virtuals ACP ecosystem.',
+  verification: {
+    other: {
+      'virtual-protocol-site-verification': '806be1859a42c3170083bb517b661f02',
+    },
+  },
 }
 
 export default function RootLayout({
