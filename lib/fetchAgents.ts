@@ -16,9 +16,6 @@ export async function fetchAgents(ids: number[]): Promise<Agent[]> {
     const idsParam = ids.join(',')
     const response = await fetch(
       `/api/agents?ids=${idsParam}`,
-      {
-        next: { revalidate: 3600 }, // 1 saat cache
-      }
     )
 
     if (!response.ok) {

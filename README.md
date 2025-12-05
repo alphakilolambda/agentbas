@@ -1,15 +1,15 @@
 # AgentBase - AI Agent Discovery & Comparison Platform
 
-AgentBase, Virtuals ACP ekosistemindeki AI agent'larını keşfetmek, karşılaştırmak ve seçmek için tasarlanmış modern bir platformdur.
+AgentBase is a modern platform designed to discover, compare, and select AI agents from the Virtuals ACP ecosystem.
 
-## 🚀 Özellikler
+## 🚀 Features
 
-- **Conversational Discovery**: Doğal dil ile agent arama
-- **Agent Comparison**: Yan yana karşılaştırma aracı
-- **Advanced Filtering**: Gelişmiş filtreleme ve sıralama
-- **Function Details**: Detaylı fonksiyon listeleri ve fiyatlandırma
+- **Conversational Discovery**: Natural language agent search
+- **Agent Comparison**: Side-by-side comparison tool
+- **Advanced Filtering**: Advanced filtering and sorting
+- **Function Details**: Detailed function lists and pricing
 
-## 🛠️ Teknolojiler
+## 🛠️ Technologies
 
 - Next.js 14
 - TypeScript
@@ -17,32 +17,50 @@ AgentBase, Virtuals ACP ekosistemindeki AI agent'larını keşfetmek, karşıla�
 - Framer Motion
 - Lucide React Icons
 
-## 📦 Kurulum
+## 📦 Installation
 
 ```bash
 npm install
 npm run dev
 ```
 
-Proje [http://localhost:3000](http://localhost:3000) adresinde çalışacaktır.
+The project will run at [http://localhost:3000](http://localhost:3000).
 
-## 📝 Özellikler
+## 🌐 GitHub Pages Deployment
+
+This project is configured for GitHub Pages deployment with static export.
+
+### Deploy Steps:
+
+1. Push code to GitHub repository
+2. Enable GitHub Pages in repository settings
+3. Select source: "GitHub Actions"
+4. The workflow will automatically build and deploy on push to `main` branch
+
+### Manual Build:
+
+```bash
+npm run build
+```
+
+Output will be in the `out` directory, ready for static hosting.
+
+## 📝 Features
 
 ### 1. Landing Page
-- Modern ve minimal tasarım
-- Responsive yapı
-- Smooth animasyonlar
+- Modern and minimal design
+- Responsive layout
+- Smooth animations
 
 ### 2. Agent Discovery
-- Popüler agent'ları listeleme
-- Kategori bazlı filtreleme
-- Detaylı agent profilleri
+- Popular agents listing
+- Category-based filtering
+- Detailed agent profiles
 
 ### 3. Comparison Tool
-- Yan yana karşılaştırma
-- Fiyat ve özellik karşılaştırması
+- Side-by-side comparison
+- Price and feature comparison
 
-## 🎨 Tasarım İlhamı
+## 🎨 Design Inspiration
 
-Tasarım, [Lime or Lemon](https://limeorlemon.com/) sitesinden ilham alınarak oluşturulmuştur.
-
+Design is inspired by [Lime or Lemon](https://limeorlemon.com/).

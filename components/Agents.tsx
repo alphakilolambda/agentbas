@@ -36,14 +36,11 @@ export default function Agents() {
     async function refreshAgents() {
       try {
         setIsRefreshing(true)
-        // Liste endpoint'i kullan - tek call ile tüm popüler agent'lar
-        const response = await fetch(`/api/agents/popular?limit=9`)
-        
-        if (response.ok) {
-          const data = await response.json()
-          if (data.agents && data.agents.length > 0) {
-            setAgents(data.agents)
-          }
+        // Doğrudan Virtuals API'den çek (GitHub Pages için client-side)
+        const { fetchPopularAgentsByVolume } = await import('@/lib/virtualsMetricsApi')
+        const fetchedAgents = await fetchPopularAgentsByVolume(9)
+        if (fetchedAgents && fetchedAgents.length > 0) {
+          setAgents(fetchedAgents)
         }
       } catch (err) {
         console.error('Agent verileri güncellenirken hata:', err)

@@ -44,7 +44,6 @@ export async function fetchAgentFromVirtuals(id: number): Promise<FormattedAgent
       headers: {
         'Accept': 'application/json',
       },
-      next: { revalidate: 3600 }, // 1 saat cache
     })
 
     if (!response.ok) {

@@ -46,7 +46,6 @@ export async function fetchPopularAgents(limit: number = 9): Promise<FormattedAg
         headers: {
           'Accept': 'application/json',
         },
-        next: { revalidate: 3600 }, // 1 saat cache
       }
     )
 

@@ -18,10 +18,11 @@ export default function Comparison() {
     async function fetchAgents() {
       try {
         setLoading(true)
-        const response = await fetch('/api/agents/popular?limit=20')
-        if (response.ok) {
-          const data = await response.json()
-          setAvailableAgents(data.agents || [])
+        // Doğrudan Virtuals API'den çek (GitHub Pages için client-side)
+        const { fetchPopularAgentsByVolume } = await import('@/lib/virtualsMetricsApi')
+        const fetchedAgents = await fetchPopularAgentsByVolume(20)
+        if (fetchedAgents && fetchedAgents.length > 0) {
+          setAvailableAgents(fetchedAgents)
         }
       } catch (error) {
         console.error('Error fetching agents:', error)

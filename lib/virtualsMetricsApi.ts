@@ -43,7 +43,6 @@ export async function fetchPopularAgentsByVolume(limit: number = 9): Promise<For
         headers: {
           'Accept': 'application/json',
         },
-        next: { revalidate: 3600 }, // 1 saat cache
       }
     )
 
@@ -66,7 +65,6 @@ export async function fetchPopularAgentsByVolume(limit: number = 9): Promise<For
               headers: {
                 'Accept': 'application/json',
               },
-              next: { revalidate: 3600 },
             }
           )
 

@@ -1,7 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  output: 'export', // GitHub Pages için static export
   images: {
+    unoptimized: true, // Static export için gerekli
     domains: [
       'app.virtuals.io',
       's3.ap-southeast-1.amazonaws.com',
@@ -26,6 +28,9 @@ const nextConfig = {
       },
     ],
   },
+  // GitHub Pages için base path (repo adına göre ayarlanabilir)
+  // basePath: process.env.NODE_ENV === 'production' ? '/agentbase' : '',
+  // assetPrefix: process.env.NODE_ENV === 'production' ? '/agentbase' : '',
 }
 
 module.exports = nextConfig
